@@ -41,7 +41,7 @@ function build_docker_image
 {
 	tagname=${ros_version}_${ceres_version}
 	if [ $cross_compile == 1 ]; then
-		docker buildx build --push --platform linux/amd64,linux/arm/v7, linux/arm64 --tag josephp97/ros-ceres:$tagname Docker/
+		docker buildx build --push --platform linux/amd64,linux/arm/v7, linux/arm64 --tag josephp97/ros-ceres:$tagname --build-arg ceres_version=$ceres_version --build-arg ros_version=$ros_version Docker/
 	else
 		docker buildx build --push --platform linux/amd64 --tag josephp97/ros-ceres:$tagname --build-arg ceres_version=$ceres_version --build-arg ros_version=$ros_version Docker/
 	fi

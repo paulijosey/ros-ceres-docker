@@ -1,5 +1,5 @@
 ARG ros_version='noetic'
-FROM ros:${ros_version}-perception-focal
+FROM ros:${ros_version}-perception
 ARG ceres_version='1.14.0'
 
 ENV CATKIN_WS=/root/catkin_ws
